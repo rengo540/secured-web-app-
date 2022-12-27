@@ -1,0 +1,23 @@
+﻿@model MealViewModel
+@{
+    ViewData["Title"] = "Admin";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Hello Admin</h1>
+    <form asp-action="Admin" enctype="multipart/form-data">
+        <div class="form-group">
+            <label>Meal Name</label>
+            <input asp-for="@Model.Name" class="form-control mb-3" />
+            <span asp-validation-for="@Model.Name" class="text-danger"></span>
+         </div>
+        <div class="form-group">
+            <label>Image</label>
+            <input asp-for="@Model.Image" class="form-control mb-3" />
+            <span asp-validation-for="@Model.Image" class="text-danger"></span>
+        </div>
+        <input type="submit" value="Add Meal" class="btn btn-primary" /> |
+    </form>
+</div>
+
+

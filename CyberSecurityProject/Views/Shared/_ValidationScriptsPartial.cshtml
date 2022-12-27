@@ -1,0 +1,12 @@
+﻿<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+<script>
+    $validator.unobtrusive.adapters.addSingleVal("filesize", "MaxSize");
+    $validator.addMethod("filesize", function (value, element, params) {
+        var files = $(element).prop('files');
+        s = files[0].size;
+        return s <= 1048576 * params;
+    });
+</script>
+
+
